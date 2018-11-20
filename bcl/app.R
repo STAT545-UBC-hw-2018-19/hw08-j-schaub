@@ -43,7 +43,9 @@ server <- function(input, output) {
              Type == input$typeInput,
              Country == input$countryInput) %>% 
       ggplot(aes(Price, color = Type, fill = Type)) +
-      geom_histogram()
+      geom_histogram() +
+      ylab("Count") +
+      xlab("Price ($)")
   })
   output$bcl_data <- renderTable({
     #The table
